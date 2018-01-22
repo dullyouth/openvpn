@@ -20,8 +20,6 @@
 # Set this to false if you want to just use the lwrp
 default['openvpn']['configure_default_server'] = true
 
-default['openvpn']['plugin'] = []
-
 # Used by helper library to generate certificates/keys
 default['openvpn']['key']['ca_expire'] = 3650
 default['openvpn']['key']['expire']    = 3650
@@ -55,6 +53,9 @@ default['openvpn']['push_options'] = []
 
 # Direct configuration file directives (.conf) defaults
 default['openvpn']['config']['user']  = 'nobody'
+
+# List of plugins used
+default['openvpn']['config']['plugin'] = []
 
 # the default follows Linux Standard Base Core Specification (ISO/IEC 23360 Part 1:2007(E)):
 # Table 21-2 Optional User & Group Names
