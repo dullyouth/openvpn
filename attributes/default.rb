@@ -20,6 +20,8 @@
 # Set this to false if you want to just use the lwrp
 default['openvpn']['configure_default_server'] = true
 
+default['openvpn']['plugin'] = []
+
 # Used by helper library to generate certificates/keys
 default['openvpn']['key']['ca_expire'] = 3650
 default['openvpn']['key']['expire']    = 3650
