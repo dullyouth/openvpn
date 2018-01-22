@@ -18,15 +18,6 @@ remote_file ldap_url do
   backup   false
 end
 
-# source install depends on the existence of the `tar` package
-package 'tar'
-
-# required to build openvpn-auth-ldap
-package 're2c'
-package 'gcc-4.6'
-package 'g++-4.6'
-package 'gobjc-4.6'
-
 # openldap headers
 package 'libldap2-dev'
 

@@ -136,4 +136,10 @@ openvpn_conf 'server' do
   action :create
 end
 
+
+if node['openvpn']['ldap']['config']['server']
+  include_recipe 'openvpn::ldap'
+end
+
+
 include_recipe 'openvpn::service'

@@ -37,7 +37,3 @@ if node['openvpn']['duo']['config']['ikey'] &&
 
   include_recipe 'openvpn::duo'
 end
-
-if node['openvpn']['ldap']['config']['server']
-  include_recipe 'openvpn::ldap'
-end
