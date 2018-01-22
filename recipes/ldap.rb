@@ -35,7 +35,7 @@ package 'libldap2-dev'
 # patch -p1 < /path/to/nginx_tcp_proxy_module/tcp.patch
 bash 'unarchive_source' do
   code <<-EOH
-    tar zxf #{::File.basename(ldap_src_filepath)}.tar.gz -C #{::File.dirname(ldap_src_filepath)}
+    tar zxf #{Chef::Config['file_cache_path']}/#{::File.basename(ldap_src_filepath)}.tar.gz -C #{::File.dirname(ldap_src_filepath)}
   EOH
   not_if { ::File.directory?(ldap_src_filepath) }
 end
