@@ -17,9 +17,14 @@ remote_file url do
 end
 
 # source install depends on the existence of the `tar` package
-%w/tar libssl-dev liblzo2-dev libpam0g-dev/.each do |pkg|
-  package pkg
-end
+package 'tar'
+
+# required to build openvpn-auth-ldap
+package 're2c'
+package 'gcc-4.6'
+package 'g++-4.6'
+package 'gobjc-4.6'
+
 
 # Unpack downloaded source so we could apply nginx patches
 # in custom modules - example http://yaoweibin.github.io/nginx_tcp_proxy_module/
