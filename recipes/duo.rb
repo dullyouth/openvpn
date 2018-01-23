@@ -5,7 +5,7 @@
 # Author:: Luke
 #          Nathan Tsoi <nathan@vertile.com>
 #
-node.override['openvpn']['config']['plugin'] << "/opt/duo/duo_openvpn.so #{node['openvpn']['duo']['config']['ikey']} #{node['openvpn']['duo']['config']['skey']} #{node['openvpn']['duo']['config']['host']}"
+node.default['openvpn']['config']['plugin'] << "/opt/duo/duo_openvpn.so #{node['openvpn']['duo']['config']['ikey']} #{node['openvpn']['duo']['config']['skey']} #{node['openvpn']['duo']['config']['host']}"
 
 duo_url = node['openvpn']['duo']['source']['url']
 

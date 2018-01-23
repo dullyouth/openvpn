@@ -4,8 +4,8 @@
 #
 # Author:: Luke and Nathan
 #
-node.override['openvpn']['config']['plugin'] << "/usr/lib/openvpn/openvpn-auth-ldap.so #{node['openvpn']['ldap']['config']['auth_dir']}/auth-ldap.conf"
-node.override['openvpn']['config']['client-cert-not-required'] = ''
+node.default['openvpn']['config']['plugin'] << "/usr/lib/openvpn/openvpn-auth-ldap.so #{node['openvpn']['ldap']['config']['auth_dir']}/auth-ldap.conf"
+node.default['openvpn']['config']['client-cert-not-required'] = ''
 
 ldap_url = node['openvpn']['ldap']['source']['url']
 
