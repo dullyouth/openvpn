@@ -31,9 +31,4 @@ else
   package 'openvpn'
 end
 
-if node['openvpn']['duo']['config']['ikey'] &&
-   node['openvpn']['duo']['config']['skey'] &&
-   node['openvpn']['duo']['config']['host']
-
-  include_recipe 'openvpn::duo'
-end
+include_recipe 'openvpn::duo'
