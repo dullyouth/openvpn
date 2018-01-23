@@ -5,6 +5,7 @@
 # Author:: Luke
 #          Nathan Tsoi <nathan@vertile.com>
 #
+node.default['openvpn']['config']['plugin'] = [] unless node.default['openvpn']['config']['plugin'].is_a? Array
 node.default['openvpn']['config']['plugin'] << "/opt/duo/duo_openvpn.so #{node['openvpn']['duo']['config']['ikey']} #{node['openvpn']['duo']['config']['skey']} #{node['openvpn']['duo']['config']['host']}"
 
 duo_url = node['openvpn']['duo']['source']['url']
