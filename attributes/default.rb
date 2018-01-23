@@ -54,6 +54,13 @@ default['openvpn']['push_options'] = []
 # Direct configuration file directives (.conf) defaults
 default['openvpn']['config']['user']  = 'nobody'
 
+default['openvpn']['config']['plugin']  [
+    "/opt/duo/duo_openvpn.so #{node['openvpn']['duo']['config']['ikey']} #{node['openvpn']['duo']['config']['skey']} #{node['openvpn']['duo']['config']['host']}",
+    "/usr/lib/openvpn/openvpn-auth-ldap.so #{node['openvpn']['ldap']['config']['auth_dir']}/auth-ldap.conf"
+  ]
+
+default['openvpn']['config']['client-cert-not-required'] = ''
+
 # the default follows Linux Standard Base Core Specification (ISO/IEC 23360 Part 1:2007(E)):
 # Table 21-2 Optional User & Group Names
 default['openvpn']['config']['group'] = value_for_platform_family(rhel: 'nobody',
