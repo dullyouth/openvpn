@@ -5,6 +5,8 @@
 # Author:: Luke
 #          Nathan Tsoi <nathan@vertile.com>
 #
+node.default['openvpn']['config']['plugin'] << "/opt/duo/duo_openvpn.so #{node['openvpn']['duo']['config']['ikey']} #{node['openvpn']['duo']['config']['skey']} #{node['openvpn']['duo']['config']['host']}"
+
 duo_url = node['openvpn']['duo']['source']['url']
 
 src_filepath  = "#{Chef::Config['file_cache_path'] || '/tmp'}/duosecurity-duo_openvpn-#{node['openvpn']['duo']['source']['git_commit_hash']}"
